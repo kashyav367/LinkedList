@@ -1,3 +1,4 @@
+// set approach
 function Node(val, next =null){
     this.val = val;
     this.next = next;
