@@ -23,9 +23,18 @@ function haveCycle(head){
 function printList(head){
     let curr = head;
     let output = "";
+    let seen = new Set();
 
     while(curr){
-         output += curr.value + " -> "
+
+      if(seen.has(curr)){
+        output += `(${curr.value} - cycle start here )`;
+        console.log(output);
+        return;
+      }
+
+         output += curr.value + " -> ";
+         seen.add(curr);
         curr = curr.next;
     }
     console.log(output + null);
@@ -41,3 +50,4 @@ head.next.next.next.next.next.next = new Node(7);
 head.next.next.next.next.next.next.next = head.next;
 
 console.log(haveCycle(head));
+printList(head);
