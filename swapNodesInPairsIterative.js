@@ -4,6 +4,9 @@ function ListNode(val,next=null){
 }
 
 function swapNodesInPairs(head){
+
+    if(!head || !head.next) return head;
+    
     let dummy = new ListNode();
     dummy.next= head
 
